@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Exotismes</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/styles2.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="app">
+      <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+          <a class="navbar-brand" href="index.html">Exotismes</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            Menu
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto py-4 py-lg-0">
+              <li class="nav-item">
+                <a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html"
+                  >Accueil</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html"
+                  >À propos</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Page Header-->
+      <header
+        class="masthead"
+        style="background-image: url('assets/img/home-bg.jpg')"
+      >
+        <div class="container position-relative px-4 px-lg-5">
+          <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+              <div class="site-heading">
+                <h1>Demi-Pension</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Main Content-->
+
+      <div class="container px-4 px-lg-5">
+        <table>
+          <tr>
+            <th>id</th>
+            <th>Demi pension</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>{{demiPension}}</td>
+            <button class="btn btn-success" @click="DemiPension">
+              Click
+            </button>
+          </tr>
+        </table>
+
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10 col-lg-8 col-xl-7">
+            <div class="border-head">
+              <h1 class="text-center">Statistiques</h1>
+            </div>
+            <div class="custom-bar-chart">
+              <ul class="y-axis">
+                <li><span>125</span></li>
+                <li><span>100</span></li>
+                <li><span>75</span></li>
+                <li><span>50</span></li>
+                <li><span>25</span></li>
+                <li><span>0</span></li>
+              </ul>
+              <div class="bar">
+                <div class="title">Demi-pension</div>
+                <div
+                  class="value tooltips"
+                  data-original-title="8.500"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                >
+                  85%
+                </div>
+              </div>
+              <div class="bar">
+                <div class="title">Petit-déjeuner</div>
+                <div
+                  class="value tooltips"
+                  data-original-title="5.000"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                >
+                  50%
+                </div>
+              </div>
+              <div class="bar">
+                <div class="title">Hébergements seuls</div>
+                <div
+                  class="value tooltips"
+                  data-original-title="6.000"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                >
+                  60%
+                </div>
+              </div>
+              <div class="bar">
+                <div class="title">Pension complète</div>
+                <div
+                  class="value tooltips"
+                  data-original-title="4.500"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                >
+                  45%
+                </div>
+              </div>
+              <div class="bar">
+                <div class="title">Tous inclus</div>
+                <div
+                  class="value tooltips"
+                  data-original-title="3.200"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                >
+                  32%
+                </div>
+              </div>
+              <div class="bar">
+                <div class="title">All inclusive</div>
+                <div
+                  class="value tooltips"
+                  data-original-title="6.200"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                >
+                  62%
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer-->
+      <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+          <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+              <ul class="list-inline text-center">
+                <li class="list-inline-item">
+                  <a href="https://www.exotismes.fr/">
+                    <span class="fa-stack fa-lg">
+                      <i class="fas fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-plane fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div class="small text-center text-muted fst-italic">
+                Copyright &copy; Institut G4 - 2021
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-panel">
+          <h4><i class="fa fa-angle-right"></i> XChart Example</h4>
+          <div class="panel-body">
+            <figure class="demo-xchart" id="chart"></figure>
+          </div>
+        </div>
+      </footer>
+      <!-- Bootstrap core JS-->
+      <!-- Core theme JS-->
+      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+      <script src="js/scripts.js"></script>
+      <script src="js/app.js"></script>
+    </div>
+  </body>
+</html>
