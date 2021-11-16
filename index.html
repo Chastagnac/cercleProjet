@@ -32,6 +32,11 @@
     />
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/styles2.css" rel="stylesheet" />
+
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
   </head>
 
   <body>
@@ -88,106 +93,15 @@
         </div>
       </header>
       <!-- Main Content-->
-
-      <div class="container px-4 px-lg-5">
-        <table>
-          <tr>
-            <th>id</th>
-            <th>Demi pension</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>{{demiPension}}</td>
-            <button class="btn btn-success" @click="DemiPension">
-              Click
-            </button>
-          </tr>
-        </table>
-
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-md-10 col-lg-8 col-xl-7">
-            <div class="border-head">
-              <h1 class="text-center">Statistiques</h1>
-            </div>
-            <div class="custom-bar-chart">
-              <ul class="y-axis">
-                <li><span>125</span></li>
-                <li><span>100</span></li>
-                <li><span>75</span></li>
-                <li><span>50</span></li>
-                <li><span>25</span></li>
-                <li><span>0</span></li>
-              </ul>
-              <div class="bar">
-                <div class="title">Demi-pension</div>
-                <div
-                  class="value tooltips"
-                  data-original-title="8.500"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                >
-                  85%
-                </div>
-              </div>
-              <div class="bar">
-                <div class="title">Petit-déjeuner</div>
-                <div
-                  class="value tooltips"
-                  data-original-title="5.000"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                >
-                  50%
-                </div>
-              </div>
-              <div class="bar">
-                <div class="title">Hébergements seuls</div>
-                <div
-                  class="value tooltips"
-                  data-original-title="6.000"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                >
-                  60%
-                </div>
-              </div>
-              <div class="bar">
-                <div class="title">Pension complète</div>
-                <div
-                  class="value tooltips"
-                  data-original-title="4.500"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                >
-                  45%
-                </div>
-              </div>
-              <div class="bar">
-                <div class="title">Tous inclus</div>
-                <div
-                  class="value tooltips"
-                  data-original-title="3.200"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                >
-                  32%
-                </div>
-              </div>
-              <div class="bar">
-                <div class="title">All inclusive</div>
-                <div
-                  class="value tooltips"
-                  data-original-title="6.200"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                >
-                  62%
-                </div>
-              </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+            <div id="top_x_div" style="width: 800px; height: 600px"></div>
           </div>
         </div>
       </div>
+
       <!-- Footer-->
       <footer class="border-top">
         <div class="container px-4 px-lg-5">
@@ -209,12 +123,6 @@
             </div>
           </div>
         </div>
-        <div class="content-panel">
-          <h4><i class="fa fa-angle-right"></i> XChart Example</h4>
-          <div class="panel-body">
-            <figure class="demo-xchart" id="chart"></figure>
-          </div>
-        </div>
       </footer>
       <!-- Bootstrap core JS-->
       <!-- Core theme JS-->
@@ -224,3 +132,5 @@
     </div>
   </body>
 </html>
+© 2021 GitHub, Inc. Terms Privacy Security Status Docs Contact GitHub Pricing
+API Training Blog About Loading complete

@@ -7,9 +7,9 @@ window.addEventListener('DOMContentLoaded', () => {
     let scrollPos = 0;
     const mainNav = document.getElementById('mainNav');
     const headerHeight = mainNav.clientHeight;
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         const currentTop = document.body.getBoundingClientRect().top * -1;
-        if ( currentTop < scrollPos) {
+        if (currentTop < scrollPos) {
             // Scrolling Up
             if (currentTop > 0 && mainNav.classList.contains('is-fixed')) {
                 mainNav.classList.add('is-visible');
@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 })
 
-if(localStorage.length == 0) {
+if (localStorage.length == 0) {
     localStorage.setItem('demi-pension', null);
     localStorage.setItem('petit-déjeuné', null);
     localStorage.setItem('hébergements-seuls', null);
@@ -36,4 +36,36 @@ if(localStorage.length == 0) {
     localStorage.setItem('Tous-inclus', null);
     localStorage.setItem('All-inclusive', null);
 }
+google.charts.load('current', { 'packages': ['bar'] });
+google.charts.setOnLoadCallback(drawStuff);
 
+function drawStuff() {
+    var data = new google.visualization.arrayToDataTable([
+        ['Move', 'Percentage'],
+        ["Demi-pension", 10],
+        ["Petit-déjeuner", 20],
+        ["Hébergements seuls", 30],
+        ["Pension complète", 30],
+        ["Tous-inclus", 20],
+        ["All-inclusive", 10]
+    ]);
+
+    var options = {
+        width: 800,
+        legend: { position: 'none' },
+        chart: {
+            title: 'Statistiques',
+            subtitle: 'Mots par minutes'
+        },
+        axes: {
+            x: {
+                0: { side: 'top', label: '' } // Top x-axis.
+            }
+        },
+        bar: { groupWidth: "90%" }
+    };
+
+    var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+    // Convert the Classic options to Material options.
+    chart.draw(data, google.charts.Bar.convertOptions(options));
+};
