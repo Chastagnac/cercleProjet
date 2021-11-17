@@ -80,7 +80,7 @@
               <ul class="nav nav-list">
                   <li><div class="left-bg"></div></li>
                   <li class="time">
-                     <h1 class="animated fadeInLeft">TODO</h1>
+                     <h1 class="animated fadeInLeft" id="date" style="font-size: 20px;"></h1>
                     <p class="animated fadeInRight">TODO</p>
                   </li>
                   <li class="active ripple">
@@ -266,6 +266,34 @@
         document.getElementById("hours").hidden = "true";  
         document.getElementById("day").hidden = "false";
     }
+
+     const socket = new WebSocket("ws://192.168.3.219:5000");
+
+    socket.addEventListener("open", function (event) {
+    console.log("Connecté WS serveur");
+    });
+
+    socket.addEventListener("close", function (event) {
+    console.log("Déconnecté WS serveur");
+    });
+
+    socket.addEventListener("message", function (event) {
+    console.log("Serveur : Data receive");
+    UpdateData(JSON.parse(event.data));
+    });
+
+    function UpdateData(CpuJson) {
+        console.log(CpuJson);
+        document.getElementById("date").innerText =
+            CpuJson["CPUdata"][0]["Date"];
+        document.getElementById("temp").innerText =
+            CpuJson["CPUdata"][0]["Temperature"] + "°C";
+        document.getElementById("cpu").innerText =
+            CpuJson["CPUdata"][0]["CpuUsage"].toFixed(2) + "%";
+        document.getElementById("ram").innerText =
+            CpuJson["CPUdata"][0]["RAMUsage"] + "/3.7Go";
+    }
+
     (function(jQuery){
 
       // start: Chart =============
