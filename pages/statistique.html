@@ -27,9 +27,9 @@
   <body id="mimin" class="dashboard">
     <!-- start: Header -->
       <nav class="navbar navbar-default header navbar-fixed-top">
-        <div class="col-md-12 nav-wrapper">
-          <div class="navbar-header" style="width:100%;">
-            <div class="opener-left-menu is-open">
+        <div class="col-md-12 nav-wrapper" style="background-color: #152D35;">
+          <div class="navbar-header" style="width:100%; background-color: #152D35;">
+            <div class="opener-left-menu is-open" style="background-color: #152D35;">
               <span class="top"></span>
               <span class="middle"></span>
               <span class="bottom"></span>
@@ -74,42 +74,36 @@
 
     <div class="container-fluid mimin-wrapper">
 
-        <!-- start:Left Menu -->
-          <div id="left-menu">
-            <div class="sub-left-menu scroll">
-              <ul class="nav nav-list">
-                  <li><div class="left-bg"></div></li>
-                  <li class="time">
-                     <h1 class="animated fadeInLeft" id="date" style="font-size: 20px;"></h1>
-                    <p class="animated fadeInRight">TODO</p>
-                  </li>
-                  <li class="active ripple">
-                    <ul class="nav nav-list tree">
-                        <li><a href="statistique.html">Statistiques</a></li>
-                    </ul>
-                  </li>
-              </div>
-          </div>
-        <!-- end: Left Menu -->
+    <!-- start:Left Menu -->
+        <div id="left-menu">
+        <div class="sub-left-menu scroll">
+            <ul class="nav nav-list">
+                <li class="time">
+                    <h1 class="animated fadeInLeft" id="date" style="font-size: 20px;"></h1>
+                </li>
+                <li class="active ripple">
+                <ul class="nav nav-list tree">
+                    <li><a href="statistique.html">Statistiques</a></li>
+                </ul>
+                </li>
+            </div>
+        </div>
+    <!-- end: Left Menu -->
 
-        
-        <!-- start: content -->
-          <div id="content">
-              <div class="col-md-12" style="padding:20px;">
-                <div class="col-md-12 card-wrap padding-0">
-                  <div class="col-md-6">
-                        <!-- start: content -->
-                    <div class="panel" id="minutes">
+    
+    <!-- start: content -->
+        <div id="content">
+            <div class="col-md-12" style="padding:20px;">
+            <div class="col-md-12 card-wrap padding-0">
+                <div class="col-md-6">
+                <!-- GRAPH -->
+                <div class="panel" id="minutes">
                     <div class="panel-heading bg-white border-none" style="padding:20px;">
-                        <div class="col-md-6 col-sm-6 col-sm-12 text-left">
+                        <div class="text-center">
                             <button class="btn btn-light" onclick="minuteNb()">Minutes</button>
                             <button class="btn btn-light" onclick="heuresNb()">Heures</button>
                             <button class="btn btn-light" onclick="dayNb()">Jours</button>
-                        <h4>Nombre de mot clés par minutes</h4>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-sm-12">
-                            <div class="mini-onoffswitch pull-right onoffswitch-primary" style="margin-top:10px;">
-                            </div>
+                            <h4>Nombre de mot clés par minutes</h4>
                         </div>
                     </div>
                     <div class="panel-body" style="padding-bottom:50px;">
@@ -117,98 +111,72 @@
                             <canvas class="bar-chart-minutes"></canvas>
                         </div>
                     </div>
+                </div>
+                <!-- GRAPH -->
+                <div class="panel" id="hours">
+                    <div class="panel-heading bg-white border-none" style="padding:20px;">
+                    <div class="text-center">
+                        <button class="btn btn-light" onclick="minuteNb()">Minutes</button>
+                        <button class="btn btn-light" onclick="heuresNb()">Heures</button>
+                        <button class="btn btn-light" onclick="dayNb()">Jours</button>
+                        <h4>Nombre de mot clés par heures</h4>
                     </div>
-                    <div class="panel" id="hours">
-                      <div class="panel-heading bg-white border-none" style="padding:20px;">
-                        <div class="col-md-6 col-sm-6 col-sm-12 text-left">
-                            <button class="btn btn-light" onclick="minuteNb()">Minutes</button>
-                            <button class="btn btn-light" onclick="heuresNb()">Heures</button>
-                            <button class="btn btn-light" onclick="dayNb()">Jours</button>
-                          <h4>Nombre de mot clés par heures</h4>
-                        </div>
-                      </div>
-                      <div class="panel-body" style="padding-bottom:50px;">
-                          <div id="canvas-holder1">
-                            <canvas class="bar-chart-hours"></canvas>
-                          </div>
-                      </div>
                     </div>
-                    <div class="panel" id="day">
-                      <div class="panel-heading bg-white border-none" style="padding:20px;">
-                        <div class="col-md-6 col-sm-6 col-sm-12 text-left">
-                            <button class="btn btn-light" onclick="minuteNb()">Minutes</button>
-                            <button class="btn btn-light" onclick="heuresNb()">Heures</button>
-                            <button class="btn btn-light" onclick="dayNb()">Jours</button>
-                          <h4>Nombre de mot clés par jours</h4>
+                    <div class="panel-body" style="padding-bottom:50px;">
+                        <div id="canvas-holder1">
+                        <canvas class="bar-chart-hours"></canvas>
                         </div>
-                      </div>
-                      <div class="panel-body" style="padding-bottom:50px;">
-                          <div id="canvas-holder1">
-                            <canvas class="bar-chart-day"></canvas>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="panel">
-                      <div class="panel-heading bg-white border-none" style="padding:20px;">
-                        <div class="col-md-6 col-sm-6 col-sm-12 text-left">
-                          <h4>Line Chart</h4>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-sm-12">
-                            <div class="mini-onoffswitch pull-right onoffswitch-danger" style="margin-top:10px;">
-                              <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox" id="myonoffswitch1" checked>
-                              <label class="onoffswitch-label" for="myonoffswitch1"></label>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="panel-body" style="padding-bottom:50px;">
-                          <div id="canvas-holder1">
-                                <canvas class="line-chart" style="margin-top:30px;height:200px;"></canvas>
-                          </div>
-                          <div class="col-md-12" style="padding-top:20px;">
-                              <div class="col-md-4 col-sm-4 col-xs-6 text-center">
-                                  <h2 style="line-height:.4;">$100.21</h2>
-                                  <small>Total Laba</small>
-                              </div>
-                              <div class="col-md-4 col-sm-4 col-xs-6 text-center">
-                                  <h2 style="line-height:.4;">2000</h2>
-                                  <small>Total Barang</small>
-                              </div>
-                              <div class="col-md-4 col-sm-4 col-xs-12 text-center">
-                                  <h2 style="line-height:.4;">$291.1</h2>
-                                  <small>Total Pengeluaran</small>
-                              </div>
-                          </div>
-                      </div>
                     </div>
                 </div>
-                  <div class="col-md-12">
-                      <div class="panel bg-green text-white">
-                          <div class="panel-body">
-                            <div class="col-md-8 col-sm-8 col-xs-12">
-                              <div class="maps" style="height:300px;">
-                              </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4 col-xs-12">
-                                <canvas class="doughnut-chart hidden-xs"></canvas>
-                                <div class="col-md-12">
-                                  <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <h1>72.993</h1>
-                                    <p>People</p>
-                                  </div>
-                                  <div class="col-md-6 col-sm-12 col-xs-12">
-                                     <h1>12.000</h1>
-                                     <p>Active</p>
-                                  </div>
-                                </div>
-                            </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+                <!-- GRAPH -->        
+                <div class="panel" id="day">
+                    <div class="panel-heading bg-white border-none" style="padding:20px;">
+                        <div class="text-center">
+                            <button class="btn btn-light" onclick="minuteNb()">Minutes</button>
+                            <button class="btn btn-light" onclick="heuresNb()">Heures</button>
+                            <button class="btn btn-light" onclick="dayNb()">Jours</button>
+                            <h4>Nombre de mot clés par jours</h4>
+                        </div>
+                    </div>
+                    <div class="panel-body" style="padding-bottom:50px;">
+                        <div id="canvas-holder1">
+                        <canvas class="bar-chart-day"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
-        <!-- end: content -->
+            <div class="col-md-6">
+            <div class="panel">
+                <div class="panel-heading bg-white border-none" style="padding:20px;">
+                    <h4>Unité centrale de traitement</h4>
+                </div>
+                <div class="panel-body" style="padding-bottom:50px;">
+                    <div>
+                    <table>
+                    <tr style="font-weight : bold">
+                        <td>Température CPU</td>
+                        <td>Utilisation du CPU</td>
+                        <td>Utilisation de la RAM</td>
+                        <td>Espace disque utilisé</td>
+                    </tr>
+                    <tr>
+                        <td id="temp">0</td>
+                        <td id="cpu">0</td>
+                        <td id="ram">0</td>
+                        <td id="espace">0</td>
+                    </tr>
+                    </table>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-heading bg-white border-none" style="padding:20px;">
+                    <h4>Espace disque</h4>
+                    <canvas class="doughnut-chart hidden-xs"></canvas>
+                </div>
+            </div>
+        </div>
+    <!-- end: content -->
     </div>
 
     <!-- start: Mobile -->
@@ -249,22 +217,20 @@
   <!-- custom -->
    <script src="../../asset/js/main.js"></script>
    <script type="text/javascript">
-       document.getElementById("day").hidden = "true"; 
-       document.getElementById("minutes").hidden = "true"; 
     function minuteNb() {
         document.getElementById("minutes").hidden = false;
-        document.getElementById("hours").hidden = "true";
-        document.getElementById("day").hidden = "true";
+        document.getElementById("hours").hidden = true;
+        document.getElementById("day").hidden = true;
     }
     function heuresNb() {
-        document.getElementById("minutes").hidden = "true";  
-        document.getElementById("hours").hidden = "false";
-        document.getElementById("day").hidden = "true";
+        document.getElementById("minutes").hidden = true;  
+        document.getElementById("hours").hidden = false;
+        document.getElementById("day").hidden = true;
     }
     function dayNb() {
-        document.getElementById("minutes").hidden = "true";
-        document.getElementById("hours").hidden = "true";  
-        document.getElementById("day").hidden = "false";
+        document.getElementById("minutes").hidden = true;
+        document.getElementById("hours").hidden = true;  
+        document.getElementById("day").hidden = false;
     }
 
      const socket = new WebSocket("ws://192.168.3.219:5000");
@@ -278,327 +244,299 @@
     });
 
     socket.addEventListener("message", function (event) {
-    console.log("Serveur : Data receive");
-    UpdateData(JSON.parse(event.data));
+        console.log("Serveur : Data receive");
+        UpdateData(JSON.parse(event.data));
+        localStorage.setItem('SpaceDisk', getSpaceDisk(JSON.parse(event.data)));
     });
-
     function UpdateData(CpuJson) {
         console.log(CpuJson);
+
         document.getElementById("date").innerText =
             CpuJson["CPUdata"][0]["Date"];
+
         document.getElementById("temp").innerText =
             CpuJson["CPUdata"][0]["Temperature"] + "°C";
+
+        document.getElementById("espace").innerText =
+            CpuJson["CPUdata"][0]["DiskSpace"][3]; 
+
         document.getElementById("cpu").innerText =
-            CpuJson["CPUdata"][0]["CpuUsage"].toFixed(2) + "%";
+            CpuJson["CPUdata"][0]["CpuUsage"] + "%"; 
+       
         document.getElementById("ram").innerText =
             CpuJson["CPUdata"][0]["RAMUsage"] + "/3.7Go";
     }
+console.log(3,6 * localStorage.getItem('SpaceDisk'))
+    function getSpaceDisk(CpuJson) {
+        return parseInt(CpuJson["CPUdata"][0]["DiskSpace"][3]); 
+    }
 
+    function placeDispo() {
+        return 360 - (3,6 * (localStorage.getItem('SpaceDisk')))
+    }
     (function(jQuery){
+        Chart.defaults.global.pointHitDetectionRadius = 1;
+        Chart.defaults.global.customTooltips = function(tooltip) {
+        var tooltipEl = $('#chartjs-tooltip');
+        if (!tooltip) {
+            tooltipEl.css({
+                opacity: 0
+            });
+            return;
+        }
+        tooltipEl.removeClass('above below');
+        tooltipEl.addClass(tooltip.yAlign);
 
-      // start: Chart =============
+        var innerHtml = '';
+        if (undefined !== tooltip.labels && tooltip.labels.length) {
+            for (var i = tooltip.labels.length - 1; i >= 0; i--) {
+                innerHtml += [
+                    '<div class="chartjs-tooltip-section">',
+                    '   <span class="chartjs-tooltip-key" style="background-color:' + tooltip.legendColors[i].fill + '"></span>',
+                    '   <span class="chartjs-tooltip-value">' + tooltip.labels[i] + '</span>',
+                    '</div>'
+                ].join('');
+            }
+            tooltipEl.html(innerHtml);
+        }
 
-      Chart.defaults.global.pointHitDetectionRadius = 1;
-      Chart.defaults.global.customTooltips = function(tooltip) {
+        tooltipEl.css({
+            opacity: 1,
+            left: tooltip.chart.canvas.offsetLeft + tooltip.x + 'px',
+            top: tooltip.chart.canvas.offsetTop + tooltip.y + 'px',
+            fontFamily: tooltip.fontFamily,
+            fontSize: tooltip.fontSize,
+            fontStyle: tooltip.fontStyle
+        });
+    };
+    var randomScalingFactor = function() {
+        return Math.round(Math.random() * 100);
+    };
+    var lineChartData = {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+            label: "My First dataset",
+            fillColor: "rgba(21,186,103,0.4)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(66,69,67,0.3)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [18,9,5,7,4.5,4,5,4.5,6,5.6,7.5]
+        }, {
+            label: "My Second dataset",
+            fillColor: "rgba(21,113,186,0.5)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: [4,7,5,7,4.5,4,5,4.5,6,5.6,7.5]
+        }]
+    };
 
-          var tooltipEl = $('#chartjs-tooltip');
-
-          if (!tooltip) {
-              tooltipEl.css({
-                  opacity: 0
-              });
-              return;
-          }
-
-          tooltipEl.removeClass('above below');
-          tooltipEl.addClass(tooltip.yAlign);
-
-          var innerHtml = '';
-          if (undefined !== tooltip.labels && tooltip.labels.length) {
-              for (var i = tooltip.labels.length - 1; i >= 0; i--) {
-                  innerHtml += [
-                      '<div class="chartjs-tooltip-section">',
-                      '   <span class="chartjs-tooltip-key" style="background-color:' + tooltip.legendColors[i].fill + '"></span>',
-                      '   <span class="chartjs-tooltip-value">' + tooltip.labels[i] + '</span>',
-                      '</div>'
-                  ].join('');
-              }
-              tooltipEl.html(innerHtml);
-          }
-
-          tooltipEl.css({
-              opacity: 1,
-              left: tooltip.chart.canvas.offsetLeft + tooltip.x + 'px',
-              top: tooltip.chart.canvas.offsetTop + tooltip.y + 'px',
-              fontFamily: tooltip.fontFamily,
-              fontSize: tooltip.fontSize,
-              fontStyle: tooltip.fontStyle
-          });
-      };
-      var randomScalingFactor = function() {
-          return Math.round(Math.random() * 100);
-      };
-      var lineChartData = {
-          labels: ["January", "February", "March", "April", "May", "June", "July"],
-          datasets: [{
-              label: "My First dataset",
-              fillColor: "rgba(21,186,103,0.4)",
-              strokeColor: "rgba(220,220,220,1)",
-              pointColor: "rgba(66,69,67,0.3)",
-              pointStrokeColor: "#fff",
-              pointHighlightFill: "#fff",
-              pointHighlightStroke: "rgba(220,220,220,1)",
-               data: [18,9,5,7,4.5,4,5,4.5,6,5.6,7.5]
-          }, {
-              label: "My Second dataset",
-              fillColor: "rgba(21,113,186,0.5)",
-              strokeColor: "rgba(151,187,205,1)",
-              pointColor: "rgba(151,187,205,1)",
-              pointStrokeColor: "#fff",
-              pointHighlightFill: "#fff",
-              pointHighlightStroke: "rgba(151,187,205,1)",
-              data: [4,7,5,7,4.5,4,5,4.5,6,5.6,7.5]
-          }]
-      };
-
-      var doughnutData = [
-              {
-                  value: 300,
-                  color:"#129352",
-                  highlight: "#15BA67",
-                  label: "Alfa"
-              },
-              {
-                  value: 50,
-                  color: "#1AD576",
-                  highlight: "#15BA67",
-                  label: "Beta"
-              },
-              {
-                  value: 100,
-                  color: "#FDB45C",
-                  highlight: "#15BA67",
-                  label: "Gamma"
-              },
-              {
-                  value: 40,
-                  color: "#0F5E36",
-                  highlight: "#15BA67",
-                  label: "Peta"
-              },
-              {
-                  value: 120,
-                  color: "#15A65D",
-                  highlight: "#15BA67",
-                  label: "X"
-              }
-
-          ];
+    });
+    var doughnutData = [
+            {
+                value: placeDispo(),
+                color: "#345B63",
+                highlight: "#345B63",
+                label: "Utilisé"
+            },
+            {
+                value: (3,6 * localStorage.getItem('SpaceDisk')),
+                color: "#D4ECDD",
+                highlight: "#D4ECDD",
+                label: "Disponible"
+            },
+        ];
 
 
-      var doughnutData2 = [
-              {
-                  value: 100,
-                  color:"#129352",
-                  highlight: "#15BA67",
-                  label: "Alfa"
-              },
-              {
-                  value: 250,
-                  color: "#FF6656",
-                  highlight: "#FF6656",
-                  label: "Beta"
-              },
-              {
-                  value: 100,
-                  color: "#FDB45C",
-                  highlight: "#15BA67",
-                  label: "Gamma"
-              },
-              {
-                  value: 40,
-                  color: "#FD786A",
-                  highlight: "#15BA67",
-                  label: "Peta"
-              },
-              {
-                  value: 120,
-                  color: "#15A65D",
-                  highlight: "#15BA67",
-                  label: "X"
-              }
+    var doughnutData2 = [
+            {
+                value: 100,
+                color:"#129352",
+                highlight: "#15BA67",
+                label: "Alfa"
+            },
+            {
+                value: 250,
+                color: "#FF6656",
+                highlight: "#FF6656",
+                label: "Beta"
+            },
+            {
+                value: 100,
+                color: "#FDB45C",
+                highlight: "#15BA67",
+                label: "Gamma"
+            },
+            {
+                value: 40,
+                color: "#FD786A",
+                highlight: "#15BA67",
+                label: "Peta"
+            },
+            {
+                value: 120,
+                color: "#15A65D",
+                highlight: "#15BA67",
+                label: "X"
+            }
 
-          ];
+        ];
 
-      var barChartDataMinutes = {
-              labels: ["Demi-pension", "Petit-déjeuner", "Hébergements seuls", "Pension complète", "Tous inclus", "All inclusive"],
-              datasets: [
-                  {
-                      label: "My First dataset",
-                      fillColor: "rgba(21,186,103,0.4)",
-                      strokeColor: "rgba(220,220,220,0.8)",
-                      highlightFill: "rgba(21,186,103,0.2)",
-                      highlightStroke: "rgba(21,186,103,0.2)",
-                      data: [10, 10, 10, 10, 10, 10, 10]
-                  },
-              ]
-          };
-          var barChartDataHours = {
-              labels: ["Demi-pension", "Petit-déjeuner", "Hébergements seuls", "Pension complète", "Tous inclus", "All inclusive"],
-              datasets: [
-                  {
-                      label: "My First dataset",
-                      fillColor: "rgba(21,186,103,0.4)",
-                      strokeColor: "rgba(220,220,220,0.8)",
-                      highlightFill: "rgba(21,186,103,0.2)",
-                      highlightStroke: "rgba(21,186,103,0.2)",
-                      data: [30, 30, 30, 30,30, 30, 10]
-                  },
-              ]
-          };
+    var barChartDataMinutes = {
+            labels: ["Demi-pension", "Petit-déjeuner", "Hébergements seuls", "Pension complète", "Tous inclus", "All inclusive"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.4)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(21,186,103,0.2)",
+                    highlightStroke: "rgba(21,186,103,0.2)",
+                    data: [10, 10, 10, 10, 10, 10, 10]
+                },
+            ]
+        };
+        var barChartDataHours = {
+            labels: ["Demi-pension", "Petit-déjeuner", "Hébergements seuls", "Pension complète", "Tous inclus", "All inclusive"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.4)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(21,186,103,0.2)",
+                    highlightStroke: "rgba(21,186,103,0.2)",
+                    data: [30, 30, 30, 30,30, 30, 10]
+                },
+            ]
+        };
 
-          var barChartDataDay = {
-              labels: ["Demi-pension", "Petit-déjeuner", "Hébergements seuls", "Pension complète", "Tous inclus", "All inclusive"],
-              datasets: [
-                  {
-                      label: "My First dataset",
-                      fillColor: "rgba(21,186,103,0.4)",
-                      strokeColor: "rgba(220,220,220,0.8)",
-                      highlightFill: "rgba(21,186,103,0.2)",
-                      highlightStroke: "rgba(21,186,103,0.2)",
-                      data: [102, 120, 120, 102, 102, 120, 120]
-                  },
-              ]
-          };
+        var barChartDataDay = {
+            labels: ["Demi-pension", "Petit-déjeuner", "Hébergements seuls", "Pension complète", "Tous inclus", "All inclusive"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(21,186,103,0.4)",
+                    strokeColor: "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(21,186,103,0.2)",
+                    highlightStroke: "rgba(21,186,103,0.2)",
+                    data: [102, 120, 120, 102, 102, 120, 120]
+                },
+            ]
+        };
 
 
-       window.onload = function(){
-              var ctx = $(".doughnut-chart")[0].getContext("2d");
-              window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
-                  responsive : true,
-                  showTooltips: true
-              });
+    window.onload = function(){
+            var ctx = $(".doughnut-chart")[0].getContext("2d");
+            window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
+                responsive : true,
+                showTooltips: true
+            });
 
-              var ctx2 = $(".line-chart")[0].getContext("2d");
-              window.myLine = new Chart(ctx2).Line(lineChartData, {
-                   responsive: true,
-                      showTooltips: true,
-                      multiTooltipTemplate: "<%= value %>",
-                   maintainAspectRatio: false
-              });
+            var ctx3 = $(".bar-chart-minutes")[0].getContext("2d");
+            window.myLine = new Chart(ctx3).Bar(barChartDataMinutes, {
+                responsive: true,
+                    showTooltips: true
+            });
+            var ctx3 = $(".bar-chart-hours")[0].getContext("2d");
+            window.myLine = new Chart(ctx3).Bar(barChartDataHours, {
+                responsive: true,
+                    showTooltips: true
+            });
+            var ctx3 = $(".bar-chart-day")[0].getContext("2d");
+            window.myLine = new Chart(ctx3).Bar(barChartDataDay, {
+                responsive: true,
+                    showTooltips: true
+            });
 
-              var ctx3 = $(".bar-chart-minutes")[0].getContext("2d");
-              window.myLine = new Chart(ctx3).Bar(barChartDataMinutes, {
-                   responsive: true,
-                      showTooltips: true
-              });
-              var ctx3 = $(".bar-chart-hours")[0].getContext("2d");
-              window.myLine = new Chart(ctx3).Bar(barChartDataHours, {
-                   responsive: true,
-                      showTooltips: true
-              });
-              var ctx3 = $(".bar-chart-day")[0].getContext("2d");
-              window.myLine = new Chart(ctx3).Bar(barChartDataDay, {
-                   responsive: true,
-                      showTooltips: true
-              });
 
-              var ctx4 = $(".doughnut-chart2")[0].getContext("2d");
-              window.myDoughnut2 = new Chart(ctx4).Doughnut(doughnutData2, {
-                  responsive : true,
-                  showTooltips: true
-              });
+        };
 
-          };
-      
-      //  end:  Chart =============
+    $('.dashboard .calendar').fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
+        defaultDate: '2015-02-12',
+        businessHours: true, // display business hours
+        editable: true,
+        events: [
+            {
+                title: 'Business Lunch',
+                start: '2015-02-03T13:00:00',
+                constraint: 'businessHours'
+            },
+            {
+                title: 'Meeting',
+                start: '2015-02-13T11:00:00',
+                constraint: 'availableForMeeting', // defined below
+                color: '#20C572'
+            },
+            {
+                title: 'Conference',
+                start: '2015-02-18',
+                end: '2015-02-20'
+            },
+            {
+                title: 'Party',
+                start: '2015-02-29T20:00:00'
+            },
 
-      // start: Calendar =========
-       $('.dashboard .calendar').fullCalendar({
-          header: {
-              left: 'prev,next today',
-              center: 'title',
-              right: 'month,agendaWeek,agendaDay'
-          },
-          defaultDate: '2015-02-12',
-          businessHours: true, // display business hours
-          editable: true,
-          events: [
-              {
-                  title: 'Business Lunch',
-                  start: '2015-02-03T13:00:00',
-                  constraint: 'businessHours'
-              },
-              {
-                  title: 'Meeting',
-                  start: '2015-02-13T11:00:00',
-                  constraint: 'availableForMeeting', // defined below
-                  color: '#20C572'
-              },
-              {
-                  title: 'Conference',
-                  start: '2015-02-18',
-                  end: '2015-02-20'
-              },
-              {
-                  title: 'Party',
-                  start: '2015-02-29T20:00:00'
-              },
+            // areas where "Meeting" must be dropped
+            {
+                id: 'availableForMeeting',
+                start: '2015-02-11T10:00:00',
+                end: '2015-02-11T16:00:00',
+                rendering: 'background'
+            },
+            {
+                id: 'availableForMeeting',
+                start: '2015-02-13T10:00:00',
+                end: '2015-02-13T16:00:00',
+                rendering: 'background'
+            },
 
-              // areas where "Meeting" must be dropped
-              {
-                  id: 'availableForMeeting',
-                  start: '2015-02-11T10:00:00',
-                  end: '2015-02-11T16:00:00',
-                  rendering: 'background'
-              },
-              {
-                  id: 'availableForMeeting',
-                  start: '2015-02-13T10:00:00',
-                  end: '2015-02-13T16:00:00',
-                  rendering: 'background'
-              },
+            // red areas where no events can be dropped
+            {
+                start: '2015-02-24',
+                end: '2015-02-28',
+                overlap: false,
+                rendering: 'background',
+                color: '#FF6656'
+            },
+            {
+                start: '2015-02-06',
+                end: '2015-02-08',
+                overlap: true,
+                rendering: 'background',
+                color: '#FF6656'
+            }
+        ]
+    });
+    // end : Calendar==========
 
-              // red areas where no events can be dropped
-              {
-                  start: '2015-02-24',
-                  end: '2015-02-28',
-                  overlap: false,
-                  rendering: 'background',
-                  color: '#FF6656'
-              },
-              {
-                  start: '2015-02-06',
-                  end: '2015-02-08',
-                  overlap: true,
-                  rendering: 'background',
-                  color: '#FF6656'
-              }
-          ]
-      });
-      // end : Calendar==========
+    // start: Maps============
 
-      // start: Maps============
+    jQuery('.maps').vectorMap({
+        map: 'world_en',
+        backgroundColor: null,
+        color: '#fff',
+        hoverOpacity: 0.7,
+        selectedColor: '#666666',
+        enableZoom: true,
+        showTooltip: true,
+        values: sample_data,
+        scaleColors: ['#C8EEFF', '#006491'],
+        normalizeFunction: 'polynomial'
+    });
 
-        jQuery('.maps').vectorMap({
-          map: 'world_en',
-          backgroundColor: null,
-          color: '#fff',
-          hoverOpacity: 0.7,
-          selectedColor: '#666666',
-          enableZoom: true,
-          showTooltip: true,
-          values: sample_data,
-          scaleColors: ['#C8EEFF', '#006491'],
-          normalizeFunction: 'polynomial'
-      });
 
-      // end: Maps==============
-
-    })(jQuery);
-   </script>
+(jQuery);
+</script>
 <!-- end: Javascript -->
 
 </html>
-© 2021 GitHub, Inc. Terms Privacy Security Status Docs Contact GitHub Pricing
-API Training Blog About Loading complete
+
