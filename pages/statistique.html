@@ -8,17 +8,17 @@
     />
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <title>Exotismes</title>
-    <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../asset/css/bootstrap.min.css">
 
       <!-- plugins -->
-      <link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css"/>
-      <link rel="stylesheet" type="text/css" href="asset/css/plugins/simple-line-icons.css"/>
-      <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css"/>
-      <link rel="stylesheet" type="text/css" href="asset/css/plugins/fullcalendar.min.css"/>
-	<link href="asset/css/style.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="../asset/css/plugins/font-awesome.min.css"/>
+      <link rel="stylesheet" type="text/css" href="../asset/css/plugins/simple-line-icons.css"/>
+      <link rel="stylesheet" type="text/css" href="../asset/css/plugins/animate.min.css"/>
+      <link rel="stylesheet" type="text/css" href="../asset/css/plugins/fullcalendar.min.css"/>
+	<link href="../asset/css/style.css" rel="stylesheet">
 	<!-- end: Css -->
 
-	<link rel="shortcut icon" href="asset/img/logomi.png">
+	<link rel="shortcut icon" href="../asset/img/logomi.png">
     <script
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
@@ -34,7 +34,7 @@
               <span class="middle"></span>
               <span class="bottom"></span>
             </div>
-              <a href="index.html" class="navbar-brand"> 
+              <a href="../index.html" class="navbar-brand"> 
                <b>Exotismes</b>
               </a>
 
@@ -85,7 +85,7 @@
                   </li>
                   <li class="active ripple">
                     <ul class="nav nav-list tree">
-                        <li><a href="pages/statistique.html">Statistiques</a></li>
+                        <li><a href="statistique.html">Statistiques</a></li>
                     </ul>
                   </li>
               </div>
@@ -94,13 +94,120 @@
 
         
         <!-- start: content -->
-        <div id="content">
-            <div class="col-md-12" style="padding:20px;">
+          <div id="content">
+              <div class="col-md-12" style="padding:20px;">
                 <div class="col-md-12 card-wrap padding-0">
-                  
+                  <div class="col-md-6">
+                        <!-- start: content -->
+                    <div class="panel" id="minutes">
+                    <div class="panel-heading bg-white border-none" style="padding:20px;">
+                        <div class="col-md-6 col-sm-6 col-sm-12 text-left">
+                            <button class="btn btn-light" onclick="minuteNb()">Minutes</button>
+                            <button class="btn btn-light" onclick="heuresNb()">Heures</button>
+                            <button class="btn btn-light" onclick="dayNb()">Jours</button>
+                        <h4>Nombre de mot clés par minutes</h4>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sm-12">
+                            <div class="mini-onoffswitch pull-right onoffswitch-primary" style="margin-top:10px;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body" style="padding-bottom:50px;">
+                        <div id="canvas-holder1">
+                            <canvas class="bar-chart-minutes"></canvas>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="panel" id="hours">
+                      <div class="panel-heading bg-white border-none" style="padding:20px;">
+                        <div class="col-md-6 col-sm-6 col-sm-12 text-left">
+                            <button class="btn btn-light" onclick="minuteNb()">Minutes</button>
+                            <button class="btn btn-light" onclick="heuresNb()">Heures</button>
+                            <button class="btn btn-light" onclick="dayNb()">Jours</button>
+                          <h4>Nombre de mot clés par heures</h4>
+                        </div>
+                      </div>
+                      <div class="panel-body" style="padding-bottom:50px;">
+                          <div id="canvas-holder1">
+                            <canvas class="bar-chart-hours"></canvas>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="panel" id="day">
+                      <div class="panel-heading bg-white border-none" style="padding:20px;">
+                        <div class="col-md-6 col-sm-6 col-sm-12 text-left">
+                            <button class="btn btn-light" onclick="minuteNb()">Minutes</button>
+                            <button class="btn btn-light" onclick="heuresNb()">Heures</button>
+                            <button class="btn btn-light" onclick="dayNb()">Jours</button>
+                          <h4>Nombre de mot clés par jours</h4>
+                        </div>
+                      </div>
+                      <div class="panel-body" style="padding-bottom:50px;">
+                          <div id="canvas-holder1">
+                            <canvas class="bar-chart-day"></canvas>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="panel">
+                      <div class="panel-heading bg-white border-none" style="padding:20px;">
+                        <div class="col-md-6 col-sm-6 col-sm-12 text-left">
+                          <h4>Line Chart</h4>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-sm-12">
+                            <div class="mini-onoffswitch pull-right onoffswitch-danger" style="margin-top:10px;">
+                              <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox" id="myonoffswitch1" checked>
+                              <label class="onoffswitch-label" for="myonoffswitch1"></label>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="panel-body" style="padding-bottom:50px;">
+                          <div id="canvas-holder1">
+                                <canvas class="line-chart" style="margin-top:30px;height:200px;"></canvas>
+                          </div>
+                          <div class="col-md-12" style="padding-top:20px;">
+                              <div class="col-md-4 col-sm-4 col-xs-6 text-center">
+                                  <h2 style="line-height:.4;">$100.21</h2>
+                                  <small>Total Laba</small>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-6 text-center">
+                                  <h2 style="line-height:.4;">2000</h2>
+                                  <small>Total Barang</small>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                                  <h2 style="line-height:.4;">$291.1</h2>
+                                  <small>Total Pengeluaran</small>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
                 </div>
+                  <div class="col-md-12">
+                      <div class="panel bg-green text-white">
+                          <div class="panel-body">
+                            <div class="col-md-8 col-sm-8 col-xs-12">
+                              <div class="maps" style="height:300px;">
+                              </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <canvas class="doughnut-chart hidden-xs"></canvas>
+                                <div class="col-md-12">
+                                  <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <h1>72.993</h1>
+                                    <p>People</p>
+                                  </div>
+                                  <div class="col-md-6 col-sm-12 col-xs-12">
+                                     <h1>12.000</h1>
+                                     <p>Active</p>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
             </div>
-        </div>
         <!-- end: content -->
     </div>
 
@@ -124,24 +231,41 @@
      <!-- end: Mobile -->
 
   <!-- start: Javascript -->
-  <script src="asset/js/jquery.min.js"></script>
-  <script src="asset/js/jquery.ui.min.js"></script>
-  <script src="asset/js/bootstrap.min.js"></script>
+  <script src="../asset/js/jquery.min.js"></script>
+  <script src="../asset/js/jquery.ui.min.js"></script>
+  <script src="../asset/js/bootstrap.min.js"></script>
  
   
   <!-- plugins -->
-  <script src="asset/js/plugins/moment.min.js"></script>
-  <script src="asset/js/plugins/fullcalendar.min.js"></script>
-  <script src="asset/js/plugins/jquery.nicescroll.js"></script>
-  <script src="asset/js/plugins/jquery.vmap.min.js"></script>
-  <script src="asset/js/plugins/maps/jquery.vmap.world.js"></script>
-  <script src="asset/js/plugins/jquery.vmap.sampledata.js"></script>
-  <script src="asset/js/plugins/chart.min.js"></script>
+  <script src="../asset/js/plugins/moment.min.js"></script>
+  <script src="../asset/js/plugins/fullcalendar.min.js"></script>
+  <script src="../asset/js/plugins/jquery.nicescroll.js"></script>
+  <script src="../asset/js/plugins/jquery.vmap.min.js"></script>
+  <script src="../asset/js/plugins/maps/jquery.vmap.world.js"></script>
+  <script src="../asset/js/plugins/jquery.vmap.sampledata.js"></script>
+  <script src="../asset/js/plugins/chart.min.js"></script>
 
 
   <!-- custom -->
-   <script src="asset/js/main.js"></script>
+   <script src="../../asset/js/main.js"></script>
    <script type="text/javascript">
+       document.getElementById("day").hidden = "true"; 
+       document.getElementById("minutes").hidden = "true"; 
+    function minuteNb() {
+        document.getElementById("minutes").hidden = false;
+        document.getElementById("hours").hidden = "true";
+        document.getElementById("day").hidden = "true";
+    }
+    function heuresNb() {
+        document.getElementById("minutes").hidden = "true";  
+        document.getElementById("hours").hidden = "false";
+        document.getElementById("day").hidden = "true";
+    }
+    function dayNb() {
+        document.getElementById("minutes").hidden = "true";
+        document.getElementById("hours").hidden = "true";  
+        document.getElementById("day").hidden = "false";
+    }
     (function(jQuery){
 
       // start: Chart =============
@@ -278,8 +402,8 @@
 
           ];
 
-      var barChartData = {
-              labels: ["January", "February", "March", "April", "May", "June", "July"],
+      var barChartDataMinutes = {
+              labels: ["Demi-pension", "Petit-déjeuner", "Hébergements seuls", "Pension complète", "Tous inclus", "All inclusive"],
               datasets: [
                   {
                       label: "My First dataset",
@@ -287,18 +411,38 @@
                       strokeColor: "rgba(220,220,220,0.8)",
                       highlightFill: "rgba(21,186,103,0.2)",
                       highlightStroke: "rgba(21,186,103,0.2)",
-                      data: [65, 59, 80, 81, 56, 55, 40]
+                      data: [10, 10, 10, 10, 10, 10, 10]
                   },
-                  {
-                      label: "My Second dataset",
-                      fillColor: "rgba(21,113,186,0.5)",
-                      strokeColor: "rgba(151,187,205,0.8)",
-                      highlightFill: "rgba(21,113,186,0.2)",
-                      highlightStroke: "rgba(21,113,186,0.2)",
-                      data: [28, 48, 40, 19, 86, 27, 90]
-                  }
               ]
           };
+          var barChartDataHours = {
+              labels: ["Demi-pension", "Petit-déjeuner", "Hébergements seuls", "Pension complète", "Tous inclus", "All inclusive"],
+              datasets: [
+                  {
+                      label: "My First dataset",
+                      fillColor: "rgba(21,186,103,0.4)",
+                      strokeColor: "rgba(220,220,220,0.8)",
+                      highlightFill: "rgba(21,186,103,0.2)",
+                      highlightStroke: "rgba(21,186,103,0.2)",
+                      data: [30, 30, 30, 30,30, 30, 10]
+                  },
+              ]
+          };
+
+          var barChartDataDay = {
+              labels: ["Demi-pension", "Petit-déjeuner", "Hébergements seuls", "Pension complète", "Tous inclus", "All inclusive"],
+              datasets: [
+                  {
+                      label: "My First dataset",
+                      fillColor: "rgba(21,186,103,0.4)",
+                      strokeColor: "rgba(220,220,220,0.8)",
+                      highlightFill: "rgba(21,186,103,0.2)",
+                      highlightStroke: "rgba(21,186,103,0.2)",
+                      data: [102, 120, 120, 102, 102, 120, 120]
+                  },
+              ]
+          };
+
 
        window.onload = function(){
               var ctx = $(".doughnut-chart")[0].getContext("2d");
@@ -315,8 +459,18 @@
                    maintainAspectRatio: false
               });
 
-              var ctx3 = $(".bar-chart")[0].getContext("2d");
-              window.myLine = new Chart(ctx3).Bar(barChartData, {
+              var ctx3 = $(".bar-chart-minutes")[0].getContext("2d");
+              window.myLine = new Chart(ctx3).Bar(barChartDataMinutes, {
+                   responsive: true,
+                      showTooltips: true
+              });
+              var ctx3 = $(".bar-chart-hours")[0].getContext("2d");
+              window.myLine = new Chart(ctx3).Bar(barChartDataHours, {
+                   responsive: true,
+                      showTooltips: true
+              });
+              var ctx3 = $(".bar-chart-day")[0].getContext("2d");
+              window.myLine = new Chart(ctx3).Bar(barChartDataDay, {
                    responsive: true,
                       showTooltips: true
               });
@@ -418,3 +572,5 @@
 <!-- end: Javascript -->
 
 </html>
+© 2021 GitHub, Inc. Terms Privacy Security Status Docs Contact GitHub Pricing
+API Training Blog About Loading complete
