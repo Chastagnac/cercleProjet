@@ -1,501 +1,252 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <script src="https://unpkg.com/vue/dist/vue.js"></script>
-        <title>Exotismes</title>
-        <script src="https://code.iconify.design/2/2.0.3/iconify.min.js%22%3E"></script>
-        <!-- plugins -->
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css%27%3E'>
-        <link rel="stylesheet" type="text/css" href="../asset/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../asset/css/plugins/font-awesome.min.css"/>
-        <link rel="stylesheet" type="text/css" href="../asset/css/plugins/simple-line-icons.css"/>
-        <link rel="stylesheet" type="text/css" href="../asset/css/plugins/animate.min.css"/>
-        <link rel="stylesheet" type="text/css" href="../asset/css/plugins/fullcalendar.min.css"/>
-        <link href="../asset/css/style.css" rel="stylesheet">
-        <!-- end: Css -->
-        <link rel="shortcut icon" href="../asset/img/logomi.png">
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    </head>
-  
-    <body id="mimin" class="dashboard">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Exotismes</title>
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js%22%3E"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css%27%3E"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/plugins/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/plugins/simple-line-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/plugins/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/plugins/fullcalendar.min.css"
+    />
+    <link href="../asset/css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../asset/img/logomi.png" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
+
+  <body id="mimin" class="dashboard">
     <!-- start: Header -->
-        <nav class="navbar navbar-default header navbar-fixed-top">
-            <div class="col-md-12 nav-wrapper" style="background-color: #152D35;">
-                <div class="navbar-header" style="width:100%; background-color: #152D35;">
-                    <div class="opener-left-menu is-open" style="background-color: #152D35;">
-                        <span class="top"></span>
-                        <span class="middle"></span>
-                        <span class="bottom"></span>
-                    </div>
-                    <a href="../index.html" class="navbar-brand"> 
-                        <b>Exotismes</b>
-                    </a>
-                    <ul class="nav navbar-nav search-nav">
-                        <li>
-                            <div class="search">
-                                <div class="form-group form-animate-text">
-                                    <input type="text" class="form-text" required>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+    <nav class="navbar navbar-default header navbar-fixed-top">
+      <div class="col-md-12 nav-wrapper" style="background-color: #152d35">
+        <div
+          class="navbar-header"
+          style="width: 100%; background-color: #152d35"
+        >
+          <div
+            class="opener-left-menu is-open"
+            style="background-color: #152d35"
+          >
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+          </div>
+          <a href="../index.html" class="navbar-brand">
+            <b>Exotismes</b>
+          </a>
+          <ul class="nav navbar-nav search-nav">
+            <li>
+              <div class="search">
+                <div class="form-group form-animate-text">
+                  <input type="text" class="form-text" required />
                 </div>
-            </div>
-        </nav>
-        <!-- end: Header -->
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- end: Header -->
     <div class="container-fluid mimin-wrapper">
-    <!-- start:Left Menu -->
-        <div id="left-menu">
-            <div class="sub-left-menu scroll">
-                <ul class="nav nav-list">
-                    <li class="time">
-                        <h1 class="animated fadeInLeft" id="date" style="font-size: 20px;"></h1>
-                    </li>
-                    <li class="active ripple">
-                        <ul class="nav nav-list tree">
-                            <li><a href="statistique.html">Statistiques</a></li>
-                        </ul>
-                    </li>
-                </div>
-            </div>
+      <!-- start:Left Menu -->
+      <div id="left-menu">
+        <div class="sub-left-menu scroll">
+          <ul class="nav nav-list">
+            <br />
+            <li class="time">
+              <h1
+                class="animated fadeInLeft"
+                id="date"
+                style="font-size: 20px; margin-top: 20px"
+              ></h1>
+            </li>
+            <br />
+            <li class="active ripple">
+              <ul class="nav nav-list tree">
+                <li><a href="statistique.html">Statistiques</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <!-- end: Left Menu -->
     <!-- start: content -->
-        <div id="content">
-            <div class="col-md-12" style="padding:20px;">
-                <div class="col-md-12 card-wrap padding-0">
-                    <div class="col-md-6">
-                        <div class="panel">
-                            <div class="panel-heading bg-white border-none" style="padding:20px;">
-                                <h4>Unité centrale de traitement</h4>
-                            </div>
-                            <div class="panel-body" style="padding-bottom:50px;">
-                                <div>
-                                    <table>
-                                    <tr style="font-weight : bold">
-                                        <td>Température CPU</td>
-                                        <td>Utilisation du CPU</td>
-                                        <td>Utilisation de la RAM</td>
-                                        <td>Espace disque utilisé</td>
-                                        <td>Ta grosse soeur la pute</td>
-                                    </tr>
-                                    <tr>
-                                        <td id="temp">0</td>
-                                        <td id="cpu">0</td>
-                                        <td id="ram">0</td>
-                                        <td id="espace">0</td>
-                                        <td id="text"></td>
-                                    </tr>
-                                    </table>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    <div class="panel">
-                        <div class="panel-heading bg-white border-none" style="padding:20px;">
-                            <h4>Espace disque</h4>
-                                <canvas class="doughnut-chart">
-                                </canvas>
-                        </div>
-                    </div>
-                    </div>
-                <div class="col-md-6">
-                    <!-- GRAPH -->
-                        <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
-                            <label for="reg-log"></label>
-                            <div class="card-3d-wrap mx-auto">
-                                <div class="card-3d-wrapper">
-                                    <div class="card-front">
-                                        <h4>Nombre de mot clés par minutes</h4>
-                                            <div class="panel" id="minutes">
-                                                <div class="panel-body" style="padding-bottom:50px;">
-                                                    <div id="canvas-holder1">
-                                                        <canvas class="bar-chart-minutes"></canvas>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    <div class="card-back">
-                                        <h4>Nombre de mot clés par jours</h4>
-                                        <div class="panel" id="day">
-                                            <div class="panel-body" style="padding-bottom:50px;">
-                                                <div id="canvas-holder1">
-                                                <canvas class="bar-chart-day-xs" width="420" heigh="200"></canvas>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                    <!-- GRAPH -->
-                        <div class="panel" id="hours">
-                            <!-- <div class="panel-body" style="padding-bottom:50px;">
-                                <div id="canvas-holder1">
-                                <canvas class="bar-chart-hours"></canvas>
-                                </div>
-                            </div> -->
-                        </div>
-                    <!-- GRAPH -->        
-                    
-                    </div>
-            </div>
+    <div
+      class="modal fade"
+      id="getCodeModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Mot clé détecté !</h4>
+          </div>
+          <div class="modal-body">
+            <p>Le mot clé à été détecté.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-white" ng-click="cancel()">
+              Fermer
+            </button>
+            <button type="button" class="btn btn-primary" on-click="ok()">
+              Je valide
+            </button>
+          </div>
         </div>
-    <!-- end: content -->
+      </div>
     </div>
+    <div id="content">
+      <div class="col-md-12" style="padding: 20px">
+        <div class="col-md-12 card-wrap padding-0">
+          <div class="col-md-6">
+            <div class="panel">
+              <div
+                class="panel-heading bg-white border-none"
+                style="padding: 20px"
+              >
+                <h4>Unité centrale de traitement</h4>
+              </div>
+              <div class="panel-body" style="padding-bottom: 50px">
+                <div>
+                  <table>
+                    <tr style="font-weight: bold">
+                      <td>Température CPU</td>
+                      <td>Utilisation du CPU</td>
+                      <td>Utilisation de la RAM</td>
+                      <td>Espace disque utilisé</td>
+                    </tr>
+                    <tr>
+                      <td id="temp">0</td>
+                      <td id="cpu">0</td>
+                      <td id="ram">0</td>
+                      <td id="espace">0</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div
+                class="panel-heading bg-white border-none"
+                style="padding: 20px"
+              >
+                <h4>Mot clé</h4>
+                <p id="text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <!-- GRAPH -->
+            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="reg-log"
+                name="reg-log"
+              />
+              <label for="reg-log"></label>
+              <div class="card-3d-wrap mx-auto">
+                <div class="card-3d-wrapper">
+                  <div class="card-front">
+                    <h4>Nombre de mot clés par jours</h4>
+                    <div class="panel" id="day">
+                      <div class="panel-body" style="padding-bottom: 50px">
+                        <div id="canvas-holder1">
+                          <canvas class="bar-chart-day"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <h4>Nombre de mot clés par heures</h4>
+                    <div class="panel" id="hours">
+                      <div class="panel-body" style="padding-bottom: 50px">
+                        <div id="canvas-holder1">
+                          <canvas class="bar-chart-hours"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end: content -->
 
     <!-- start: Mobile -->
     <div id="mimin-mobile" class="reverse">
       <div class="mimin-mobile-menu-list">
-          <div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
-              <ul class="nav nav-list">
-                  <li class="active ripple">
-                    <ul class="nav nav-list tree">
-                        <li><a href="pages/statistique.html">Statistiques</a></li>
-                    </ul>
-                  </li>
+        <div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
+          <ul class="nav nav-list">
+            <li class="active ripple">
+              <ul class="nav nav-list tree">
+                <li><a href="pages/statistique.html">Statistiques</a></li>
               </ul>
-          </div>
-      </div>       
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <button id="mimin-mobile-menu-opener" class="animated rubberBand btn btn-circle btn-danger">
+    <button
+      id="mimin-mobile-menu-opener"
+      class="animated rubberBand btn btn-circle btn-danger"
+    >
       <span class="fa fa-bars"></span>
     </button>
-     <!-- end: Mobile -->
+    <!-- end: Mobile -->
 
-  <!-- start: Javascript -->
-  <script src="../asset/js/jquery.min.js"></script>
-  <script src="../asset/js/jquery.ui.min.js"></script>
-  <script src="../asset/js/bootstrap.min.js"></script>
- 
-  
-  <!-- plugins -->
-  <script src="../asset/js/plugins/moment.min.js"></script>
-  <script src="../asset/js/plugins/fullcalendar.min.js"></script>
-  <script src="../asset/js/plugins/jquery.nicescroll.js"></script>
-  <script src="../asset/js/plugins/jquery.vmap.min.js"></script>
-  <script src="../asset/js/plugins/maps/jquery.vmap.world.js"></script>
-  <script src="../asset/js/plugins/jquery.vmap.sampledata.js"></script>
-  <script src="../asset/js/plugins/chart.min.js"></script>
-
-
-  <!-- custom -->
-   <script src="../../asset/js/main.js"></script>
-   <script type="text/javascript">
-
-     const socket = new WebSocket("ws://192.168.3.219:5000");
-
-    socket.addEventListener("open", function (event) {
-    console.log("Connecté WS serveur");
-    });
-
-    socket.addEventListener("close", function (event) {
-    console.log("Déconnecté WS serveur");
-    });
-
-    socket.addEventListener("message", function (event) {
-        console.log("Serveur : Data receive");
-        UpdateData(JSON.parse(event.data));
-        localStorage.setItem('SpaceDisk', getSpaceDisk(JSON.parse(event.data)));
-    });
-    function UpdateData(CpuJson) {
-        console.log(CpuJson);
-
-
-        document.getElementById("text").innerText = CpuJson['CPUdata']['Text']
-
-
-        document.getElementById("date").innerText =
-            CpuJson["CPUdata"]["Date"];
-
-        document.getElementById("temp").innerText =
-            CpuJson["CPUdata"]["Temperature"] + "°C";
-
-        document.getElementById("espace").innerText =
-            CpuJson["CPUdata"]["DiskSpace"][3]; 
-
-        document.getElementById("cpu").innerText =
-            CpuJson["CPUdata"]["CpuUsage"] + "%"; 
-       
-        document.getElementById("ram").innerText =
-            CpuJson["CPUdata"]["RAMUsage"] + "/3.7Go";
-        
-   
-    }
-console.log(3,6 * localStorage.getItem('SpaceDisk'))
-    function getSpaceDisk(CpuJson) {
-        return parseInt(CpuJson["CPUdata"]["DiskSpace"][3]); 
-    }
-
-    function placeDispo() {
-        return 360 - (3,6 * (localStorage.getItem('SpaceDisk')))
-    }
-    (function(jQuery){
-        Chart.defaults.global.pointHitDetectionRadius = 1;
-        Chart.defaults.global.customTooltips = function(tooltip) {
-        var tooltipEl = $('#chartjs-tooltip');
-        if (!tooltip) {
-            tooltipEl.css({
-                opacity: 0
-            });
-            return;
-        }
-        tooltipEl.removeClass('above below');
-        tooltipEl.addClass(tooltip.yAlign);
-
-        var innerHtml = '';
-        if (undefined !== tooltip.labels && tooltip.labels.length) {
-            for (var i = tooltip.labels.length - 1; i >= 0; i--) {
-                innerHtml += [
-                    '<div class="chartjs-tooltip-section">',
-                    '   <span class="chartjs-tooltip-key" style="background-color:' + tooltip.legendColors[i].fill + '"></span>',
-                    '   <span class="chartjs-tooltip-value">' + tooltip.labels[i] + '</span>',
-                    '</div>'
-                ].join('');
-            }
-            tooltipEl.html(innerHtml);
-        }
-
-        tooltipEl.css({
-            opacity: 1,
-            left: tooltip.chart.canvas.offsetLeft + tooltip.x + 'px',
-            top: tooltip.chart.canvas.offsetTop + tooltip.y + 'px',
-            fontFamily: tooltip.fontFamily,
-            fontSize: tooltip.fontSize,
-            fontStyle: tooltip.fontStyle
-        });
-    };
-    var randomScalingFactor = function() {
-        return Math.round(Math.random() * 100);
-    };
-    var lineChartData = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [{
-            label: "My First dataset",
-            fillColor: "rgba(21,186,103,0.4)",
-            strokeColor: "rgba(220,220,220,1)",
-            pointColor: "rgba(66,69,67,0.3)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [18,9,5,7,4.5,4,5,4.5,6,5.6,7.5]
-        }, {
-            label: "My Second dataset",
-            fillColor: "rgba(21,113,186,0.5)",
-            strokeColor: "rgba(151,187,205,1)",
-            pointColor: "rgba(151,187,205,1)",
-            pointStrokeColor: "#fff",
-            pointHighlightFill: "#fff",
-            pointHighlightStroke: "rgba(151,187,205,1)",
-            data: [4,7,5,7,4.5,4,5,4.5,6,5.6,7.5]
-        }]
-    };
-
-    });
-    var doughnutData = [
-            {
-                value: placeDispo(),
-                color: "#345B63",
-                highlight: "#345B63",
-                label: "Utilisé"
-            },
-            {
-                value: (3,6 * localStorage.getItem('SpaceDisk')),
-                color: "#D4ECDD",
-                highlight: "#D4ECDD",
-                label: "Disponible"
-            },
-        ];
-
-
-    var doughnutData2 = [
-            {
-                value: 100,
-                color:"#129352",
-                highlight: "#15BA67",
-                label: "Alfa"
-            },
-            {
-                value: 250,
-                color: "#FF6656",
-                highlight: "#FF6656",
-                label: "Beta"
-            },
-            {
-                value: 100,
-                color: "#FDB45C",
-                highlight: "#15BA67",
-                label: "Gamma"
-            },
-            {
-                value: 40,
-                color: "#FD786A",
-                highlight: "#15BA67",
-                label: "Peta"
-            },
-            {
-                value: 120,
-                color: "#15A65D",
-                highlight: "#15BA67",
-                label: "X"
-            }
-
-        ];
-
-    var barChartDataMinutes = {
-            labels: ["Demi-pension", "Petit-déjeuner", "Hébergements seuls", "Pension complète", "Tous inclus", "All inclusive"],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    fillColor: "rgba(21,186,103,0.4)",
-                    strokeColor: "rgba(220,220,220,0.8)",
-                    highlightFill: "rgba(21,186,103,0.2)",
-                    highlightStroke: "rgba(21,186,103,0.2)",
-                    data: [10, 10, 10, 10, 10, 10, 10]
-                },
-            ]
-        };
-        var barChartDataHours = {
-            labels: ["Demi-pension", "Petit-déjeuner", "Hébergements seuls", "Pension complète", "Tous inclus", "All inclusive"],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    fillColor: "rgba(21,186,103,0.4)",
-                    strokeColor: "rgba(220,220,220,0.8)",
-                    highlightFill: "rgba(21,186,103,0.2)",
-                    highlightStroke: "rgba(21,186,103,0.2)",
-                    data: [30, 30, 30, 30,30, 30, 10]
-                },
-            ]
-        };
-
-        var barChartDataDay = {
-            labels: ["Demi-pension", "Petit-déjeuner", "Hébergements seuls", "Pension complète", "Tous inclus", "All inclusive"],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    fillColor: "rgba(21,186,103,0.4)",
-                    strokeColor: "rgba(220,220,220,0.8)",
-                    highlightFill: "rgba(21,186,103,0.2)",
-                    highlightStroke: "rgba(21,186,103,0.2)",
-                    data: [102, 120, 120, 102, 102, 120, 120]
-                },
-            ]
-        };
-
-
-    window.onload = function(){
-            var ctx = $(".doughnut-chart")[0].getContext("2d");
-            window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
-                responsive : true,
-                showTooltips: true,
-                options: {
-                    aspectRatio: 1,
-                }
-            });
-
-            var ctx3 = $(".bar-chart-minutes")[0].getContext("2d");
-            window.myLine = new Chart(ctx3).Bar(barChartDataMinutes, {
-                responsive: true,
-                    showTooltips: true
-            });
-            // var ctx3 = $(".bar-chart-hours")[0].getContext("2d");
-            // window.myLine = new Chart(ctx3).Bar(barChartDataHours, {
-            //     responsive: true,
-            //         showTooltips: true
-            // });
-            var ctx3 = $(".bar-chart-day")[0].getContext("2d");
-            window.myLine = new Chart(ctx3).Bar(barChartDataDay, {
-                responsive: true,
-                    showTooltips: true
-            });
-
-
-        };
-
-    $('.dashboard .calendar').fullCalendar({
-        header: {
-            left: 'prev,next today',
-            center: 'title',
-            right: 'month,agendaWeek,agendaDay'
-        },
-        defaultDate: '2015-02-12',
-        businessHours: true, // display business hours
-        editable: true,
-        events: [
-            {
-                title: 'Business Lunch',
-                start: '2015-02-03T13:00:00',
-                constraint: 'businessHours'
-            },
-            {
-                title: 'Meeting',
-                start: '2015-02-13T11:00:00',
-                constraint: 'availableForMeeting', // defined below
-                color: '#20C572'
-            },
-            {
-                title: 'Conference',
-                start: '2015-02-18',
-                end: '2015-02-20'
-            },
-            {
-                title: 'Party',
-                start: '2015-02-29T20:00:00'
-            },
-
-            // areas where "Meeting" must be dropped
-            {
-                id: 'availableForMeeting',
-                start: '2015-02-11T10:00:00',
-                end: '2015-02-11T16:00:00',
-                rendering: 'background'
-            },
-            {
-                id: 'availableForMeeting',
-                start: '2015-02-13T10:00:00',
-                end: '2015-02-13T16:00:00',
-                rendering: 'background'
-            },
-
-            // red areas where no events can be dropped
-            {
-                start: '2015-02-24',
-                end: '2015-02-28',
-                overlap: false,
-                rendering: 'background',
-                color: '#FF6656'
-            },
-            {
-                start: '2015-02-06',
-                end: '2015-02-08',
-                overlap: true,
-                rendering: 'background',
-                color: '#FF6656'
-            }
-        ]
-    });
-    // end : Calendar==========
-
-    // start: Maps============
-
-    jQuery('.maps').vectorMap({
-        map: 'world_en',
-        backgroundColor: null,
-        color: '#fff',
-        hoverOpacity: 0.7,
-        selectedColor: '#666666',
-        enableZoom: true,
-        showTooltip: true,
-        values: sample_data,
-        scaleColors: ['#C8EEFF', '#006491'],
-        normalizeFunction: 'polynomial'
-    });
-
-
-(jQuery);
-</script>
+    <!-- start: Javascript -->
+    <script src="../asset/js/jquery.min.js"></script>
+    <script src="../asset/js/jquery.ui.min.js"></script>
+    <script src="../asset/js/bootstrap.min.js"></script>
+    <!-- plugins -->
+    <script src="../asset/js/plugins/moment.min.js"></script>
+    <script src="../asset/js/plugins/fullcalendar.min.js"></script>
+    <script src="../asset/js/plugins/jquery.nicescroll.js"></script>
+    <script src="../asset/js/plugins/jquery.vmap.min.js"></script>
+    <script src="../asset/js/plugins/maps/jquery.vmap.world.js"></script>
+    <script src="../asset/js/plugins/jquery.vmap.sampledata.js"></script>
+    <script src="../asset/js/plugins/chart.min.js"></script>
+    <script src="../../asset/js/main.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script type="text/javascript"></script>
+  </body>
 </html>
