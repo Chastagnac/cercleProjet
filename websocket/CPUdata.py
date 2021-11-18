@@ -13,12 +13,15 @@ class CPUdata:
     def getJsonData(self):
         date = datetime.datetime.now()
         date = self.utcToLocalTime(date).strftime("%d/%m/%Y, %H:%M:%S")
+        with open('/home/pi/tmp/deepspeech-venv/mic_vad_streaming/test.txt') as f:
+            lines = f.readlines()
         CPUJsonData = { 
             'CPUdata' : [{
                 'Temperature' : self.getTemp(),
                 'CpuUsage' : self.getUsage(),
                 'RAMUsage' : self.getRAM(2),
-                'Date' : date
+                'Date' : date,
+                'Text' : lines
             }]
         }
         return CPUJsonData
