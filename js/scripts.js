@@ -1,6 +1,6 @@
 demiPension = "demi pension"
-petitDejeuner = "petit déjeuner"
-herbergementsSeuls = "hébergements seuls"
+petitDejeuner = "petit déjeuné"
+herbergementsSeuls = "hébergement seul"
 pensionComplète = "pension complète"
 toutInclus = "tous inclus"
 allInclusive = "all-inclusive"
@@ -31,12 +31,17 @@ socket.addEventListener("message", function (event) {
 function UpdateData(CpuJson) {
 
     if (localStorage.getItem('boucle') == 0) {
-        checkWord(document.getElementById("text").innerText)
+        checkWord(CpuJson['CPUdata']['Text'][0])
     }
     if (CpuJson['CPUdata']['Text'] == "") {
         startBoucle()
     }
-    console.log(count)
+    // let str = CpuJson['CPUdata']['Text'][0]
+    // console.log(str)
+    // if (str.includes('demi pension')) {
+    //     console.log('CA MARCHE')
+    // }
+
     document.getElementById("text").innerText = CpuJson['CPUdata']['Text']
     document.getElementById("date").innerText =
         CpuJson["CPUdata"]["Date"];
@@ -58,56 +63,53 @@ function startBoucle() {
 }
 
 function checkWord(word) {
-    switch (word) {
-        case 'bonjour':
-            stopBoucle()
-            $("#getCodeModal").modal('show');
-            i = localStorage.getItem(demiPension)
-            i++
-            localStorage.setItem(demiPension, i);
-            break
-        case 'demi pension':
-            stopBoucle()
-            $("#getCodeModal").modal('show');
-            i = localStorage.getItem(demiPension)
-            i++
-            localStorage.setItem(demiPension, i);
-            break
-        case 'petit déjeuner':
-            stopBoucle()
-            $("#getCodeModal").modal('show');
-            i = localStorage.getItem(petitDejeuner)
-            i++
-            localStorage.setItem(petitDejeuner, i);
-            break
-        case 'hébergements seuls':
-            stopBoucle()
-            $("#getCodeModal").modal('show');
-            i = localStorage.getItem(herbergementsSeuls)
-            i++
-            localStorage.setItem(herbergementsSeuls, i);
-            break
-        case 'pension complète':
-            stopBoucle()
-            $("#getCodeModal").modal('show');
-            i = localStorage.getItem(pensionComplète)
-            i++
-            localStorage.setItem(pensionComplète, i);
-            break
-        case 'tous inclus':
-            stopBoucle()
-            $("#getCodeModal").modal('show');
-            i = localStorage.getItem(toutInclus)
-            i++
-            localStorage.setItem(toutInclus, i);
-            break
-        case 'all-inclusive':
-            stopBoucle()
-            $("#getCodeModal").modal('show');
-            i = localStorage.getItem(allInclusive)
-            i++
-            localStorage.setItem(allInclusive, i);
-            break
+    if (word.includes('bonjour')) {
+        document.getElementById('panelword').style.display = "block"
+    }
+    else if (word.includes('demi pension')) {
+        stopBoucle()
+        $("#getCodeModal").modal('show');
+        i = localStorage.getItem(demiPension)
+        i++
+        localStorage.setItem(demiPension, i);
+    }
+    else if (word.includes('petit déjeuné')) {
+        stopBoucle()
+        $("#getCodeModal").modal('show');
+        i = localStorage.getItem(petitDejeuner)
+        i++
+        localStorage.setItem(petitDejeuner, i);
+    } 
+    else if (word.includes('hébergement seuls')) {
+        stopBoucle()
+        $("#getCodeModal").modal('show');
+        i = localStorage.getItem(herbergementsSeuls)
+        i++
+        localStorage.setItem(herbergementsSeuls, i);
+    } 
+    else if (word.includes('pension complète')) {
+        stopBoucle()
+        $("#getCodeModal").modal('show');
+        i = localStorage.getItem(pensionComplète)
+        i++
+        localStorage.setItem(pensionComplète, i);
+    } 
+    else if (word.includes('tous inclus')) {
+        stopBoucle()
+        $("#getCodeModal").modal('show');
+        i = localStorage.getItem(toutInclus)
+        i++
+        localStorage.setItem(toutInclus, i);
+    } 
+    else if (word.includes('all inclusive')) {
+        stopBoucle()
+        $("#getCodeModal").modal('show');
+        i = localStorage.getItem(allInclusive)
+        i++
+        localStorage.setItem(allInclusive, i);
+    } 
+    else if (word.includes('au revoir')) {
+        document.getElementById('panelword').style.display = "none"
     }
 }
 
@@ -158,7 +160,7 @@ var barChartDataDay = {
             strokeColor: "rgba(220,220,220,0.8)",
             highlightFill: "rgba(21,186,103,0.2)",
             highlightStroke: "rgba(21,186,103,0.2)",
-            data: [102, 120, 120, 102, 102, 120, 120],
+            data: [count['demiPensionCount'], count['petitDejeunCount'], count['hebergementSeulCount'], count['pensionCompleteCount'], count['toutInlcusCount'], count['allInclusiveCount']],
         },
     ],
 };

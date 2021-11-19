@@ -18,6 +18,7 @@
       type="text/css"
       href="../asset/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -117,13 +118,13 @@
             <h4 class="modal-title">Mot clé détecté !</h4>
           </div>
           <div class="modal-body">
-            <p>Le mot clé à été détecté.</p>
+            <p>Un mot clé à été détecté.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-white" ng-click="cancel()">
+            <button type="button" class="btn btn-white" data-dismiss="modal">
               Fermer
             </button>
-            <button type="button" class="btn btn-primary" on-click="ok()">
+            <button type="button" class="btn btn-primary">
               Je valide
             </button>
           </div>
@@ -160,12 +161,17 @@
                 </div>
               </div>
             </div>
-            <div class="panel">
+            <div class="panel" id="panelword" style="display: none">
               <div
                 class="panel-heading bg-white border-none"
                 style="padding: 20px"
               >
-                <h4>Mot clé</h4>
+                <h4>Discussion détectée</h4>
+                <i
+                  class="fa fa-phone"
+                  style="font-size: xxx-large; margin: -40px; float: right"
+                  aria-hidden="true"
+                ></i>
                 <p id="text"></p>
               </div>
             </div>
