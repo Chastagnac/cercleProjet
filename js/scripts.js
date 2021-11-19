@@ -61,6 +61,9 @@ function stopBoucle() {
 function startBoucle() {
     localStorage.setItem('boucle', 0)
 }
+function ok() {
+    document.getElementById('success').style.display = "block"
+}
 
 function checkWord(word) {
     if (word.includes('bonjour')) {
@@ -79,35 +82,35 @@ function checkWord(word) {
         i = localStorage.getItem(petitDejeuner)
         i++
         localStorage.setItem(petitDejeuner, i);
-    } 
+    }
     else if (word.includes('hébergement seuls')) {
         stopBoucle()
         $("#getCodeModal").modal('show');
         i = localStorage.getItem(herbergementsSeuls)
         i++
         localStorage.setItem(herbergementsSeuls, i);
-    } 
+    }
     else if (word.includes('pension complète')) {
         stopBoucle()
         $("#getCodeModal").modal('show');
         i = localStorage.getItem(pensionComplète)
         i++
         localStorage.setItem(pensionComplète, i);
-    } 
+    }
     else if (word.includes('tous inclus')) {
         stopBoucle()
         $("#getCodeModal").modal('show');
         i = localStorage.getItem(toutInclus)
         i++
         localStorage.setItem(toutInclus, i);
-    } 
+    }
     else if (word.includes('all inclusive')) {
         stopBoucle()
         $("#getCodeModal").modal('show');
         i = localStorage.getItem(allInclusive)
         i++
         localStorage.setItem(allInclusive, i);
-    } 
+    }
     else if (word.includes('au revoir')) {
         document.getElementById('panelword').style.display = "none"
     }

@@ -19,6 +19,7 @@
       href="../asset/css/bootstrap.min.css"
     />
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../css/notif.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -104,6 +105,7 @@
     </div>
     <!-- end: Left Menu -->
     <!-- start: content -->
+
     <div
       class="modal fade"
       id="getCodeModal"
@@ -124,14 +126,16 @@
             <button type="button" class="btn btn-white" data-dismiss="modal">
               Fermer
             </button>
-            <button type="button" class="btn btn-primary">
-              Je valide
-            </button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="ok()">Je valide</button>
           </div>
         </div>
       </div>
     </div>
     <div id="content">
+        <br>
+        <div class="alert alert-success" role="alert" id="success" style="width: 50%; display: none; float: right;">
+            L'action à bien été prise en compte.
+          </div>  
       <div class="col-md-12" style="padding: 20px">
         <div class="col-md-12 card-wrap padding-0">
           <div class="col-md-6">
@@ -253,6 +257,7 @@
     <script src="../asset/js/plugins/chart.min.js"></script>
     <script src="../../asset/js/main.js"></script>
     <script src="../js/scripts.js"></script>
+    <script src="../js/notif.js"></script>
     <script type="text/javascript"></script>
   </body>
 </html>
