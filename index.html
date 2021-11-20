@@ -8,219 +8,191 @@
     />
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <title>Exotismes</title>
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js%22%3E"></script>
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css%27%3E"
     />
-
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/plugins/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/plugins/simple-line-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/plugins/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/plugins/fullcalendar.min.css"
+    />
+    <link href="../asset/css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../asset/img/logomi.png" />
     <script
-      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
-      crossorigin="anonymous"
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
     ></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="css/styles2.css" rel="stylesheet" />
   </head>
 
-  <body>
-    <div id="app">
-      <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-        <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="index.html">Exotismes</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarResponsive"
-            aria-controls="navbarResponsive"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+  <body id="mimin" class="dashboard">
+    <!-- start: Header -->
+    <nav class="navbar navbar-default header navbar-fixed-top">
+      <div class="col-md-12 nav-wrapper" style="background-color: #152d35">
+        <div
+          class="navbar-header"
+          style="width: 100%; background-color: #152d35"
+        >
+          <div
+            class="opener-left-menu is-open"
+            style="background-color: #152d35"
           >
-            Menu
-            <i class="fas fa-bars"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto py-4 py-lg-0">
-              <li class="nav-item">
-                <a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html"
-                  >Accueil</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html"
-                  >À propos</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html"
-                  >Contact</a
-                >
-              </li>
-            </ul>
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
           </div>
-        </div>
-      </nav>
-      <!-- Page Header-->
-      <header
-        class="masthead"
-        style="background-image: url('assets/img/home-bg.jpg')"
-      >
-        <div class="container position-relative px-4 px-lg-5">
-          <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-              <div class="site-heading">
-                <h1>Demi-Pension</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-      <!-- Main Content-->
-
-      <div class="container px-4 px-lg-5">
-        <table>
-          <tr>
-            <th>id</th>
-            <th>Demi pension</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>{{demiPension}}</td>
-            <button class="btn btn-success" @click="DemiPension">
-              Click
-            </button>
-          </tr>
-        </table>
-
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-md-10 col-lg-8 col-xl-7">
-            <div class="border-head">
-              <h1 class="text-center">Statistiques</h1>
-            </div>
-            <div class="custom-bar-chart">
-              <ul class="y-axis">
-                <li><span>125</span></li>
-                <li><span>100</span></li>
-                <li><span>75</span></li>
-                <li><span>50</span></li>
-                <li><span>25</span></li>
-                <li><span>0</span></li>
-              </ul>
-              <div class="bar">
-                <div class="title">Demi-pension</div>
-                <div
-                  class="value tooltips"
-                  data-original-title="8.500"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                >
-                  85%
+          <a href="../index.html" class="navbar-brand">
+            <b>Exotismes</b>
+          </a>
+          <ul class="nav navbar-nav search-nav">
+            <li>
+              <div class="search">
+                <div class="form-group form-animate-text">
+                  <input type="text" class="form-text" required />
                 </div>
               </div>
-              <div class="bar">
-                <div class="title">Petit-déjeuner</div>
-                <div
-                  class="value tooltips"
-                  data-original-title="5.000"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                >
-                  50%
-                </div>
-              </div>
-              <div class="bar">
-                <div class="title">Hébergements seuls</div>
-                <div
-                  class="value tooltips"
-                  data-original-title="6.000"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                >
-                  60%
-                </div>
-              </div>
-              <div class="bar">
-                <div class="title">Pension complète</div>
-                <div
-                  class="value tooltips"
-                  data-original-title="4.500"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                >
-                  45%
-                </div>
-              </div>
-              <div class="bar">
-                <div class="title">Tous inclus</div>
-                <div
-                  class="value tooltips"
-                  data-original-title="3.200"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                >
-                  32%
-                </div>
-              </div>
-              <div class="bar">
-                <div class="title">All inclusive</div>
-                <div
-                  class="value tooltips"
-                  data-original-title="6.200"
-                  data-toggle="tooltip"
-                  data-placement="top"
-                >
-                  62%
-                </div>
-              </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </div>
-      <!-- Footer-->
-      <footer class="border-top">
-        <div class="container px-4 px-lg-5">
-          <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-              <ul class="list-inline text-center">
-                <li class="list-inline-item">
-                  <a href="https://www.exotismes.fr/">
-                    <span class="fa-stack fa-lg">
-                      <i class="fas fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-plane fa-stack-1x fa-inverse"></i>
-                    </span>
-                  </a>
-                </li>
+    </nav>
+    <div class="content"></div>
+    <!-- end: Header -->
+    <div class="container-fluid mimin-wrapper">
+      <!-- start:Left Menu -->
+      <div id="left-menu">
+        <div class="sub-left-menu scroll">
+          <ul class="nav nav-list">
+            <br />
+            <li class="time">
+              <h1
+                class="animated fadeInLeft"
+                id="date"
+                style="font-size: 20px; margin-top: 20px"
+              ></h1>
+            </li>
+            <br />
+            <li class="active ripple">
+              <ul class="nav nav-list tree">
+                <li><a href="pages/statistique.html">Statistiques</a></li>
               </ul>
-              <div class="small text-center text-muted fst-italic">
-                Copyright &copy; Institut G4 - 2021
-              </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
-        <div class="content-panel">
-          <h4><i class="fa fa-angle-right"></i> XChart Example</h4>
-          <div class="panel-body">
-            <figure class="demo-xchart" id="chart"></figure>
-          </div>
-        </div>
-      </footer>
-      <!-- Bootstrap core JS-->
-      <!-- Core theme JS-->
-      <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-      <script src="js/scripts.js"></script>
-      <script src="js/app.js"></script>
+      </div>
     </div>
+    <!-- end: Left Menu -->
+    <!-- start: content -->
+
+    <style>
+      .col-lg-3 {
+        padding-left: 100px;
+        padding-top: 10px;
+      }
+
+      .rounded-circle {
+        border-radius: 50%;
+        border: solid 2px #2196f3;
+      }
+    </style>
+    <div id="content">
+        <hr class="featurette-divider">
+        
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h3 class="featurette-heading">L'objectif ?</h3>
+            <div class="trait"></div> <br>
+            <p class="lead">L’objectif était de mettre en place un assistant vocal capable d'interagir avec des
+              outils interne.
+              Il fallait lorsqu'une phrase est prononcée à l'oral, l'analyser afin de retranscrire le texte puis
+              mettre en place un algorithme qui devait déterminer la présence de mots-clés et pour chaque mots-clés
+              détectés proposer à l'utilisateur une action spécifique via une interface web.
+            </p>
+          </div>
+        </div>
+        
+        <hr class="featurette-divider">
+        
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h3 class="featurette-heading">Contraintes ?</h3>
+            <div class="trait"></div> <br>
+            <p class="lead"><strong>En ce qui concerne la partie contraintes on peut en citer 6 imposées par le client :</strong> <br>
+              <br>
+              • Utilisation de Raspberry Pi : Tout le système de reconnaissance de mot clé doit tourner sur Raspberry.<br>
+              • Microphone USB obligatoire prise Jack interdite.<br>
+              • Écoute de la voix et traduction en texte en temps réel.<br>
+              • Le système de reconnaissance de mot clé doit reconnaître la langue française.<br>
+              • Envoi des mots clés détectés sur un serveur web par le protocole WebSocket via un script.<br>
+              • Rédaction d'une documentation d'installation et d'utilisateur.<br>
+            
+            </p>
+          </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- end: content -->
+
+    <!-- start: Mobile -->
+    <div id="mimin-mobile" class="reverse">
+      <div class="mimin-mobile-menu-list">
+        <div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
+          <ul class="nav nav-list">
+            <li class="active ripple">
+              <ul class="nav nav-list tree">
+                <li><a href="pages/statistique.html">Statistiques</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <button
+      id="mimin-mobile-menu-opener"
+      class="animated rubberBand btn btn-circle btn-danger"
+    >
+      <span class="fa fa-bars"></span>
+    </button>
+    <!-- end: Mobile -->
+
+    <!-- start: Javascript -->
+    <script src="../asset/js/jquery.min.js"></script>
+    <script src="../asset/js/jquery.ui.min.js"></script>
+    <script src="../asset/js/bootstrap.min.js"></script>
+    <!-- plugins -->
+    <script src="../asset/js/plugins/moment.min.js"></script>
+    <script src="../asset/js/plugins/fullcalendar.min.js"></script>
+    <script src="../asset/js/plugins/jquery.nicescroll.js"></script>
+    <script src="../asset/js/plugins/jquery.vmap.min.js"></script>
+    <script src="../asset/js/plugins/maps/jquery.vmap.world.js"></script>
+    <script src="../asset/js/plugins/jquery.vmap.sampledata.js"></script>
+    <script src="../asset/js/plugins/chart.min.js"></script>
+    <script src="../../asset/js/main.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script type="text/javascript"></script>
   </body>
 </html>

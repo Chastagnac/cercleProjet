@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <title>Exotismes</title>
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js%22%3E"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css%27%3E"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../css/notif.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/plugins/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/plugins/simple-line-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/plugins/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../asset/css/plugins/fullcalendar.min.css"
+    />
+    <link href="../asset/css/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../asset/img/logomi.png" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
+
+  <body id="mimin" class="dashboard">
+    <!-- start: Header -->
+    <nav class="navbar navbar-default header navbar-fixed-top">
+      <div class="col-md-12 nav-wrapper" style="background-color: #152d35">
+        <div
+          class="navbar-header"
+          style="width: 100%; background-color: #152d35"
+        >
+          <div
+            class="opener-left-menu is-open"
+            style="background-color: #152d35"
+          >
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+          </div>
+          <a href="../index.html" class="navbar-brand">
+            <b>Exotismes</b>
+          </a>
+          <ul class="nav navbar-nav search-nav">
+            <li>
+              <div class="search">
+                <div class="form-group form-animate-text">
+                  <input type="text" class="form-text" required />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- end: Header -->
+    <div class="container-fluid mimin-wrapper">
+      <!-- start:Left Menu -->
+      <div id="left-menu">
+        <div class="sub-left-menu scroll">
+          <ul class="nav nav-list">
+            <br />
+            <li class="time">
+              <h1
+                class="animated fadeInLeft"
+                id="date"
+                style="font-size: 20px; margin-top: 20px"
+              ></h1>
+            </li>
+            <br />
+            <li class="active ripple">
+              <ul class="nav nav-list tree">
+                <li><a href="statistique.html">Statistiques</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end: Left Menu -->
+    <!-- start: content -->
+
+    <div
+      class="modal fade"
+      id="getCodeModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Mot clé détecté !</h4>
+          </div>
+          <div class="modal-body">
+            <p>Un mot clé à été détecté.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-white" data-dismiss="modal">
+              Fermer
+            </button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="ok()">Je valide</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="content">
+        <br>
+        <div class="alert alert-success" role="alert" id="success" style="width: 50%; display: none; float: right;">
+            L'action à bien été prise en compte.
+          </div>  
+      <div class="col-md-12" style="padding: 20px; background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg);">
+        <div class="col-md-12 card-wrap padding-0">
+          <div class="col-md-6">
+            <div class="panel">
+              <div
+                class="panel-heading bg-white border-none"
+                style="padding: 20px"
+              >
+                <h4>Unité centrale de traitement</h4>
+              </div>
+              <div class="panel-body" style="padding-bottom: 50px">
+                <div>
+                  <table>
+                    <tr style="font-weight: bold">
+                      <td>Température CPU</td>
+                      <td>Utilisation du CPU</td>
+                      <td>Utilisation de la RAM</td>
+                      <td>Espace disque utilisé</td>
+                    </tr>
+                    <tr>
+                      <td id="temp">0</td>
+                      <td id="cpu">0</td>
+                      <td id="ram">0</td>
+                      <td id="espace">0</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="panel" id="panelword" style="display: none">
+              <div
+                class="panel-heading bg-white border-none"
+                style="padding: 20px"
+              >
+                <h4>Discussion détectée</h4>
+                <i
+                  class="fa fa-phone"
+                  style="font-size: xxx-large; margin: -40px; float: right"
+                  aria-hidden="true"
+                ></i>
+                <p id="text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <!-- GRAPH -->
+            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+              <input
+                class="checkbox"
+                type="checkbox"
+                id="reg-log"
+                name="reg-log"
+              />
+              <label for="reg-log"></label>
+              <div class="card-3d-wrap mx-auto">
+                <div class="card-3d-wrapper">
+                  <div class="card-front">
+                    <h4>Nombre de mot clés</h4>
+                    <div class="panel" id="day">
+                      <div class="panel-body" style="padding-bottom: 50px">
+                        <div id="canvas-holder1">
+                          <canvas class="bar-chart-day"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-back">
+                    <h4>Nombre de mot clés : bonus</h4>
+                    <div class="panel" id="hours">
+                      <div class="panel-body" style="padding-bottom: 50px">
+                        <div id="canvas-holder1">
+                          <canvas class="bar-chart-hours"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end: content -->
+
+    <!-- start: Mobile -->
+    <div id="mimin-mobile" class="reverse">
+      <div class="mimin-mobile-menu-list">
+        <div class="col-md-12 sub-mimin-mobile-menu-list animated fadeInLeft">
+          <ul class="nav nav-list">
+            <li class="active ripple">
+              <ul class="nav nav-list tree">
+                <li><a href="pages/statistique.html">Statistiques</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <button
+      id="mimin-mobile-menu-opener"
+      class="animated rubberBand btn btn-circle btn-danger"
+    >
+      <span class="fa fa-bars"></span>
+    </button>
+    <!-- end: Mobile -->
+
+    <!-- start: Javascript -->
+    <script src="../asset/js/jquery.min.js"></script>
+    <script src="../asset/js/jquery.ui.min.js"></script>
+    <script src="../asset/js/bootstrap.min.js"></script>
+    <!-- plugins -->
+    <script src="../asset/js/plugins/moment.min.js"></script>
+    <script src="../asset/js/plugins/fullcalendar.min.js"></script>
+    <script src="../asset/js/plugins/jquery.nicescroll.js"></script>
+    <script src="../asset/js/plugins/jquery.vmap.min.js"></script>
+    <script src="../asset/js/plugins/maps/jquery.vmap.world.js"></script>
+    <script src="../asset/js/plugins/jquery.vmap.sampledata.js"></script>
+    <script src="../asset/js/plugins/chart.min.js"></script>
+    <script src="../../asset/js/main.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/notif.js"></script>
+    <script type="text/javascript"></script>
+  </body>
+</html>
