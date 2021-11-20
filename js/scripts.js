@@ -1,9 +1,14 @@
 demiPension = "demi pension"
 petitDejeuner = "petit déjeuné"
-herbergementsSeuls = "hébergement seul"
+herbergementsSeuls = "hébergements seuls"
 pensionComplète = "pension complète"
 toutInclus = "tous inclus"
-allInclusive = "all-inclusive"
+allInclusive = "all inclusive"
+conditionAnnulation = "conditions d'annulation"
+contreProposition = "contre proposition"
+martinique = "martinique"
+marseille = "marseille"
+
 if (localStorage.length == 0) {
     localStorage.setItem('boucle', 0);
     localStorage.setItem(demiPension, 0);
@@ -12,6 +17,10 @@ if (localStorage.length == 0) {
     localStorage.setItem(pensionComplète, 0);
     localStorage.setItem(toutInclus, 0);
     localStorage.setItem(allInclusive, 0);
+    localStorage.setItem(conditionAnnulation, 0);
+    localStorage.setItem(contreProposition, 0);
+    localStorage.setItem(martinique, 0);
+    localStorage.setItem(marseille, 0);
 }
 
 const socket = new WebSocket("ws://192.168.3.219:5000");
@@ -36,11 +45,6 @@ function UpdateData(CpuJson) {
     if (CpuJson['CPUdata']['Text'] == "") {
         startBoucle()
     }
-    // let str = CpuJson['CPUdata']['Text'][0]
-    // console.log(str)
-    // if (str.includes('demi pension')) {
-    //     console.log('CA MARCHE')
-    // }
 
     document.getElementById("text").innerText = CpuJson['CPUdata']['Text']
     document.getElementById("date").innerText =
@@ -53,6 +57,9 @@ function UpdateData(CpuJson) {
         CpuJson["CPUdata"]["CpuUsage"] + "%";
     document.getElementById("ram").innerText =
         CpuJson["CPUdata"]["RAMUsage"] + "/3.7Go";
+    if(document.getElementById('success').style.display = "block") {
+        setTimeout(document.getElementById('success').style.display = "none", 6000)
+    }
 }
 
 function stopBoucle() {
@@ -83,7 +90,7 @@ function checkWord(word) {
         i++
         localStorage.setItem(petitDejeuner, i);
     }
-    else if (word.includes('hébergement seuls')) {
+    else if (word.includes('hébergements seuls')) {
         stopBoucle()
         $("#getCodeModal").modal('show');
         i = localStorage.getItem(herbergementsSeuls)
@@ -111,6 +118,48 @@ function checkWord(word) {
         i++
         localStorage.setItem(allInclusive, i);
     }
+    else if (word.includes('conditions d\'annulation')) {
+        stopBoucle()
+        $("#getCodeModal").modal('show');
+        i = localStorage.getItem(conditionAnnulation)
+        i++
+        localStorage.setItem(conditionAnnulation, i);
+    }
+    else if (word.includes('contre proposition')) {
+        stopBoucle()
+        $("#getCodeModal").modal('show');
+        i = localStorage.getItem(contreProposition)
+        i++
+        localStorage.setItem(contreProposition, i);
+    }
+    else if (word.includes('contre proposition')) {
+        stopBoucle()
+        $("#getCodeModal").modal('show');
+        i = localStorage.getItem(contreProposition)
+        i++
+        localStorage.setItem(contreProposition, i);
+    }
+    else if (word.includes('martinique')) {
+        stopBoucle()
+        $("#getCodeModal").modal('show');
+        i = localStorage.getItem(martinique)
+        i++
+        localStorage.setItem(martinique, i);
+    }
+    else if (word.includes('marseille')) {
+        stopBoucle()
+        $("#getCodeModal").modal('show');
+        i = localStorage.getItem(marseille)
+        i++
+        localStorage.setItem(marseille, i);
+    }
+    else if (word.includes('marseille')) {
+        stopBoucle()
+        $("#getCodeModal").modal('show');
+        i = localStorage.getItem(marseille)
+        i++
+        localStorage.setItem(marseille, i);
+    }
     else if (word.includes('au revoir')) {
         document.getElementById('panelword').style.display = "none"
     }
@@ -123,17 +172,20 @@ const count = {
     pensionCompleteCount: localStorage.getItem(pensionComplète),
     toutInlcusCount: localStorage.getItem(toutInclus),
     allInclusiveCount: localStorage.getItem(allInclusive),
+
+    conditionAnnulation: localStorage.getItem(conditionAnnulation),
+    contreProposition: localStorage.getItem(contreProposition),
+    martinique: localStorage.getItem(martinique),
+    marseille: localStorage.getItem(marseille),
 };
 
 
 var barChartDataHours = {
     labels: [
-        "Demi-pension",
-        "Petit-déjeuner",
-        "Hébergements seuls",
-        "Pension complète",
-        "Tous inclus",
-        "All inclusive",
+        "Condition d'annulation",
+        "Contre proposition",
+        "Martinique",
+        "Marseille",
     ],
     datasets: [
         {
@@ -142,7 +194,7 @@ var barChartDataHours = {
             strokeColor: "rgba(220,220,220,0.8)",
             highlightFill: "rgba(21,186,103,0.2)",
             highlightStroke: "rgba(21,186,103,0.2)",
-            data: [count['demiPensionCount'], count['petitDejeunCount'], count['hebergementSeulCount'], count['pensionCompleteCount'], count['toutInlcusCount'], count['allInclusiveCount']],
+            data: [count['conditionAnnulation'], count['contreProposition'], count['martinique'], count['marseille']],
         },
     ],
 };
